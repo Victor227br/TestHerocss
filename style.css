@@ -1,116 +1,284 @@
-body{
-   padding: 0;
-    margin: 0; 
-    font-family: 'Staatliches', sans-serif;
-
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Staatliches", sans-serif;
 }
 
-#navBar{
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 4vw;
-    color: white;
-    background-color: #1F1F1F;
-    flex-direction: row;
-    font-size: 15px;
-
+#navBar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 4vw;
+  color: white;
+  background-color: #1f1f1f;
+  flex-direction: row;
+  font-size: 15px;
 }
 
- 
-.align{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 60%;
-
-} 
-
-ul{
-    list-style: none;
-    display: flex; 
-    flex-direction: row;
-    width: 40px;
+.navList {
+  list-style: none;
+  display: flex;
+  margin-left: 53vw;
+  flex-direction: row;
+  width: 40px;
 }
 
 a {
-    text-decoration: none;
-    color: white;
-    margin: 7px;
+  text-decoration: none;
+  color: white;
+  margin: 7px;
 }
 
-.logo{
-    margin-left: 6vw;
-     background: linear-gradient(to right, #B8860B, #FFD700, #FFF8DC); 
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.logo {
+  margin-left: 6vw;
+  background: linear-gradient(to right, #b8860b, #ffd700, #fff8dc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.callActionBg{ 
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    color: white;
-    background-image: url(hamburger-2667441_1920.jpg);
-    background-size: cover;
-    background-position:top;
-    width: 100%;
+.mobileMenu{
+    cursor: pointer;
+    display: none;
 
 }
 
-.callActionTitle{
-    display: flex;
-    flex-direction: column;
-    width: 32vw;
-    height: 40vw;
-    margin:6vw;
+.mobileMenu div{
+    width: 32px;
+    height: 2px;
+    background-color: #fff;
+    margin: 8px;
 }
 
-.othersBurguers{
-    font-size: 30px;
-    color: white ;
+.callActionBg {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  color: white;
+  background-image: url(hamburger-2667441_1920.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
 }
 
-.legends{
-    
-    margin-top: 2vw;
-    font-weight: bold;
-    font-size:68px;
-    background: linear-gradient(to right, #B8860B, #FFD700, #FFF8DC); 
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin: 0;
+.callActionTitle {
+  display: flex;
+  flex-direction: column;
+  width: 32vw;
+  height: 40vw;
+  margin: 6vw;
 }
 
-.infoAbout{
-    padding: 0;
-    margin-left: 6px;
-    width: 26vw;
+.othersBurguers {
+  font-size: 30px;
+  color: white;
 }
 
-.btnMoreAbout{
-    width: 8vw;
-    height: 29px;
-    margin-top: 1vw;
-    background-color: #B8860B;
-    color: white;
-    font-weight: bold;
-    border-radius: 5px;
-    box-shadow: 0 0 0 0;
-    border: 0;
-    outline: 0;
-    font-size: 15px;
+.legends {
+  margin-top: 2vw;
+  font-weight: bold;
+  font-size: 68px;
+  background: linear-gradient(to right, #b8860b, #ffd700, #fff8dc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+
+.infoAbout {
+  padding: 0;
+  margin-left: 6px;
+  width: 26vw;
+}
+
+.btnMoreAbout {
+  width: 8vw;
+  height: 29px;
+  margin-top: 1vw;
+  background-color: #b8860b;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0 0 0 0;
+  border: 0;
+  outline: 0;
+  font-size: 15px;
+  cursor: pointer;
 }
 
 .social-icons {
+  display: flex;
+  justify-content: space-around ;
+  width: 7vw;
+  margin-top: 20px;
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+@media (max-width:1400px){
+.callActionBg{
+    background-position: top;
+    background-size: cover;
+    min-height: 100vh;
+
+}
+}
+
+@media (max-width:1024px){
+
+body{
+    overflow-x:hidden;
+}
+
+#navBar{
+    height: 10vw;
+    width: 100%;
+    margin: 0;
+  }
+
+  .logo{
+    font-size: 30px;
+    margin-right: 60vw;
+  }
+
+ .navList {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #1f1f1f;
+    position: absolute;
+    top: 8vw;
+    right: 0;
+    height: 60vw;
+    width: 30vw;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in;
+    display: none;
+
+  }
+
+.navList.active{
+    transform: translateX(0);
     display: flex;
-    gap: 5px;
-    margin-top: 20px;
   }
-  
-  .social-icons a {
-    color: #fff;
+.navList li {
+    margin-left: 0;
+}
+
+.styleLinkMediaQuery{
+    display: flex;
+    justify-content: center;
+    width: 26vw;
+border-bottom: 1px solid #b8860b;
+}
+
+  .mobileMenu{
+    display: block;
+  }
+
+a {
+    font-size: 3vw;
+
+}
+
+  .callActionBg {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-position:  center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px;
+    min-height: 100vh;
+  }
+
+  .callActionTitle {
+    width: 50%;
+    margin-top: 17vw ; 
+  }
+
+  .othersBurguers {
+    font-size: 5vw;
+  }
+
+  .legends {
+    font-size: 7vw;
+    margin-top: 8vw;
+  }
+
+  .infoAbout {
+    margin-top: 10vw;
+    width:35vw;
+    margin-top: 10px;
+    font-size: 28px;
+    font: bold;
+  }
+
+  .btnMoreAbout {
+    width: 20vw;
     font-size: 26px;
-    text-decoration: none;
+    height:50px;
   }
-  
+
+  .social-icons {
+    margin-top: 15px;
+    gap: 10px;
+  }
+
+  .social-icons a {
+    font-size: 35px;
+  }
+}
+
+@media (max-width:450px){
+
+body{
+    overflow-x: hidden;
+}
+
+#navBar{
+    height: 20vw;
+    width: 110%;
+    margin: 0;
+}
+
+.callActionBg {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-position:   top ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 200vh;
+    background-image: url(BgBurgerForSmartPhone.jpg)
+    }
+
+.othersBurguers {
+    font-size: 10vw;
+    color: white;
+}
+
+.legends {
+font-size: 12vw;
+margin-top: 20vw;
+}
+
+.callActionTitle{
+    margin-top: 50vw ;
+    width: 62vw;
+}
+
+.infoAbout {
+    padding: 0;
+    margin-left: 6px;
+    width: 56vw;
+  }
+
+  .btnMoreAbout{
+    margin-top:40px;
+    width: 40vw;
+    height: 59px;
+  }
+}
